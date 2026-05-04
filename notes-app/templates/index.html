@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A beautiful, fast notes application built with FastAPI">
+    <title>Notes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="app">
+
+            <!-- ═══════════════════════════════════════════
+                 NOTES LIST VIEW
+            ═══════════════════════════════════════════ -->
+            <div id="notes-list-view">
+                <header class="app-header">
+                    <h1>📝 Notes</h1>
+                    <div class="header-glow"></div>
+                </header>
+
+                <div class="notes-header">
+                    <p class="notes-title">☰ Notes</p>
+                    <p class="notes-count" id="notes-count">0</p>
+                </div>
+
+                <div class="notes-list" id="notes-list">
+                    <!-- Notes rendered here by JS -->
+                </div>
+
+                <!-- Empty state -->
+                <div class="empty-state" id="empty-state" style="display:none;">
+                    <div class="empty-icon">📋</div>
+                    <p>No notes yet</p>
+                    <span>Tap the + button to create one</span>
+                </div>
+
+                <button class="floating-button" id="add-note-btn" title="Create new note">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 4a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2h-6v6a1 1 0 1 1-2 0v-6H5a1 1 0 1 1 0-2h6V5a1 1 0 0 1 1-1z"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- ═══════════════════════════════════════════
+                 NOTE EDITOR VIEW
+            ═══════════════════════════════════════════ -->
+            <div id="note-editor-view" class="hidden">
+                <div class="note-header">
+                    <h3 id="back-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                        </svg>
+                        <span>Back</span>
+                    </h3>
+                    <div class="note-actions">
+                        <button id="save-btn" class="btn-save">Done</button>
+                        <button id="delete-btn" class="btn-delete">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="note-body">
+                    <textarea id="note-textarea" placeholder="Start typing your note..."></textarea>
+                </div>
+                <div class="note-meta" id="note-meta"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
