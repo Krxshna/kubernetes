@@ -1,0 +1,9 @@
+kind: MlBatch
+apiVersion: mlmodels.io/v1
+metadata:
+  name: mlbatch-3
+spec:
+  name: mlbatch-3
+  model: resnet50
+  environment: cloud
+  platform: Colab
