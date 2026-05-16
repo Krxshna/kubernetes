@@ -1,0 +1,39 @@
+kind: CustomResourceDefinition
+apiVersion: apiextensions.k8s.io/v1
+metadata:
+    name: mlbatches.mlmodels.io
+spec:
+    group: mlmodels.io
+    names:
+      plural: mlbatches
+      singular: mlbatch
+      kind: MlBatch
+      shortNames:
+        - ai
+        - ml
+        - models
+    scope: Namespaced
+    versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: "This is the name of the mlbatch"
+                model:
+                  type: string
+                  description: "This is the name of the models used"
+                environment:
+                  type: string
+                  description: "This is the environment used for model e.g: local/cloud"
+                platform:
+                  type: string
+                  description: "This is the platform used to train the models"
+
