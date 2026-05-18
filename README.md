@@ -9,6 +9,8 @@ A hands-on Kubernetes learning repository covering core workloads, Helm packagin
 - [Overview](#overview)
 - [Tech Stack](#tech-stack)
 - [Repository Structure](#repository-structure)
+- [Getting Started](#getting-started)
+- [Cluster Setup](#cluster-setup)
 - [Modules](#modules)
   - [Kubernetes Basics](#1-kubernetes-basics)
   - [Apache Workload + RBAC](#2-apache-workload--rbac)
@@ -18,8 +20,6 @@ A hands-on Kubernetes learning repository covering core workloads, Helm packagin
   - [Istio Service Mesh](#6-istio-service-mesh)
   - [Custom Resource Definitions](#7-custom-resource-definitions)
   - [Kubernetes Dashboard](#8-kubernetes-dashboard)
-- [Getting Started](#getting-started)
-- [Cluster Setup](#cluster-setup)
 
 ---
 
@@ -66,6 +66,53 @@ kubernetes/
 ├── install_kind.sh      # Automated Kind + kubectl installer
 └── monitoring/          # (planned)
 ```
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- Docker
+- Kind or Minikube
+- kubectl
+- Helm 3
+
+### Quick Cluster Setup
+
+**Kind (Kubernetes in Docker):**
+
+```bash
+# Automated setup (installs Docker, Kind, kubectl)
+chmod +x install_kind.sh
+./install_kind.sh
+
+# Create a cluster
+kind create cluster --name devops-lab
+```
+
+**Minikube:**
+
+```bash
+minikube start --cpus=2 --memory=4g
+```
+
+### Install Helm
+
+```bash
+chmod +x helm/get_helm.sh
+./helm/get_helm.sh
+```
+
+---
+
+## Cluster Setup
+
+All workloads were tested on:
+- **Kind v0.29.0** — multi-node local clusters
+- **Minikube** — single-node local clusters
+
+The `install_kind.sh` script handles Docker installation, Kind binary download (aarch64/x86_64 auto-detection), and kubectl setup automatically on Linux.
 
 ---
 
@@ -292,51 +339,4 @@ kubectl proxy
 
 ---
 
-## Getting Started
-
-### Prerequisites
-
-- Docker
-- Kind or Minikube
-- kubectl
-- Helm 3
-
-### Quick Cluster Setup
-
-**Kind (Kubernetes in Docker):**
-
-```bash
-# Automated setup (installs Docker, Kind, kubectl)
-chmod +x install_kind.sh
-./install_kind.sh
-
-# Create a cluster
-kind create cluster --name devops-lab
-```
-
-**Minikube:**
-
-```bash
-minikube start --cpus=2 --memory=4g
-```
-
-### Install Helm
-
-```bash
-chmod +x helm/get_helm.sh
-./helm/get_helm.sh
-```
-
----
-
-## Cluster Setup
-
-All workloads were tested on:
-- **Kind v0.29.0** — multi-node local clusters
-- **Minikube** — single-node local clusters
-
-The `install_kind.sh` script handles Docker installation, Kind binary download (aarch64/x86_64 auto-detection), and kubectl setup automatically on Linux.
-
----
-
-> Built for learning. Every directory is a concept practiced, not just read.
+> Built for learning.
