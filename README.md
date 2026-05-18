@@ -25,9 +25,9 @@ A hands-on Kubernetes learning repository covering core workloads, Helm packagin
 
 ## Overview
 
-This repo is a personal DevOps playground built to practice and solidify concepts across the Kubernetes ecosystem. Each directory is a focused module — isolated enough to study individually, but together they form a progression from basic pods all the way to service mesh and Helm packaging.
+A structured reference repository covering the Kubernetes ecosystem end-to-end. Each directory is a self-contained module with manifests, configurations, and commands — spanning core workloads, stateful applications, Helm packaging, RBAC, autoscaling, CRDs, and service mesh.
 
-Everything runs locally using **Kind** (Kubernetes in Docker) or **Minikube**, so no cloud account is needed.
+All workloads run locally using **Kind** (Kubernetes in Docker) or **Minikube** — no cloud account required.
 
 ---
 
